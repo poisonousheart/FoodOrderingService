@@ -10,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MenuController.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("OrderStatusController.fxml"));
         primaryStage.setTitle("Satoya");
         primaryStage.setScene(new Scene(root, 1920, 1080));
         primaryStage.setFullScreen(true);
