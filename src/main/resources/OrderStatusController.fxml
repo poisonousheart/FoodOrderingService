@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.OrderStatusController">
+    <children>
+        <ImageView fx:id="Icon" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@img/satoya_icon.jpg" />
+            </image>
+        </ImageView>
+      <TableView layoutX="201.0" layoutY="225.0" prefHeight="679.0" prefWidth="1553.0" stylesheets="style.css">
+        <columns>
+          <TableColumn prefWidth="612.0" resizable="false" text="Menu Name" />
+          <TableColumn minWidth="0.0" prefWidth="326.0" resizable="false" text="Quantity" />
+            <TableColumn prefWidth="614.0" resizable="false" text="Total Price" />
+        </columns>
+      </TableView>
+      <Text layoutX="1651.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table No. " wrappingWidth="206.6708984375">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Text>
+      <Text layoutX="1282.0" layoutY="988.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Price : " wrappingWidth="368.6708984375">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>
