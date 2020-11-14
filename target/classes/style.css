@@ -10,3 +10,7 @@
 {
 -fx-background-color : #ff80aa;
 }
+.table-view
+{
+-fx-font: 40px "Arial";
+}
