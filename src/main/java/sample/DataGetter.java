@@ -3,7 +3,7 @@ package sample;
 import java.util.ArrayList;
 import java.util.List;
 
-abstract class DataGetter {
+public class DataGetter {
     private List<String> data;
     private int maxItem;
 
