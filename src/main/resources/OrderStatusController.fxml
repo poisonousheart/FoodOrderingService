@@ -18,9 +18,11 @@
         </ImageView>
       <TableView layoutX="201.0" layoutY="225.0" prefHeight="679.0" prefWidth="1553.0" stylesheets="style.css">
         <columns>
-          <TableColumn prefWidth="612.0" resizable="false" text="Menu Name" />
-          <TableColumn minWidth="0.0" prefWidth="326.0" resizable="false" text="Quantity" />
-            <TableColumn prefWidth="614.0" resizable="false" text="Total Price" />
+          <TableColumn prefWidth="391.0" resizable="false" text="Menu Name" />
+          <TableColumn minWidth="0.0" prefWidth="227.0" resizable="false" text="Quantity" />
+            <TableColumn prefWidth="246.0" text="Ordered at" />
+            <TableColumn prefWidth="283.0" text="Status" />
+            <TableColumn minWidth="0.0" prefWidth="405.0" resizable="false" text="Total Price" />
         </columns>
       </TableView>
       <Text layoutX="1651.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table No. " wrappingWidth="206.6708984375">
