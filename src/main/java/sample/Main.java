@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.*;
+
 public class Main extends Application {
 
 
@@ -19,7 +21,7 @@ public class Main extends Application {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //DataGetter Testing
         OrderGetter d = new OrderGetter();
         System.out.println("----Order---");
@@ -32,5 +34,6 @@ public class Main extends Application {
         m.setData("{\"id\":1,\"menu_id\":\"A1\",\"menu_status\":0,\"menu_name\":\"salmon sushi\",\"price\":50,\"recipe\":\"\",\"created_at\":\"2020-10-30T08:18:43.000000Z\",\"updated_at\":\"2020-11-03T03:07:21.000000Z\",\"deleted_at\":null}");
         m.debug();
         launch(args);
+
     }
 }

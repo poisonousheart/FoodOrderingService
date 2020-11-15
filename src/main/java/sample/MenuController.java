@@ -10,7 +10,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
+import java.sql.SQLException;
 
 public class MenuController {
 
@@ -32,7 +33,7 @@ public class MenuController {
         MenuController menuScene = loader.getController();
     }
 
-    @FXML public void orderButtonClick(MouseEvent event){
+    @FXML public void orderButtonClick(MouseEvent event) throws IOException, SQLException {
         confirmButton.setVisible(true);
         backButton.setVisible(true);
         orderButton.setVisible(false);
