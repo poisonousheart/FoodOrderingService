@@ -405,7 +405,7 @@
                   </AnchorPane>
               </content>
             </ScrollPane>
-            <Label layoutY="990.0" prefHeight="50.0" prefWidth="150.0" text="Total" textFill="WHITE">
+            <Label layoutY="980.0" prefHeight="50.0" prefWidth="150.0" text="Total" textFill="WHITE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -413,7 +413,7 @@
                   <Insets left="10.0" right="10.0" />
                </padding>
             </Label>
-            <Label layoutX="150.0" layoutY="990.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="150.0" text="xxx Baht" textFill="WHITE">
+            <Label layoutX="150.0" layoutY="980.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="150.0" text="xxx Baht" textFill="WHITE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -421,9 +421,9 @@
                   <Insets left="10.0" right="10.0" />
                </padding>
             </Label>
-            <Button fx:id="orderButton" layoutX="10.0" layoutY="1050.0" mnemonicParsing="false" onMouseClicked="#orderButtonClick" prefWidth="280.0" style="-fx-background-color: a9eca2;" text="Order" />
-            <Button fx:id="backButton" layoutX="160.0" layoutY="1046.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" prefHeight="31.0" prefWidth="130.0" style="-fx-background-color: e9e9e5;" text="Back" />
-            <Button fx:id="confirmButton" layoutX="10.0" layoutY="1046.0" mnemonicParsing="false" onMouseClicked="#confirmButtonClick" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: a9eca2;" text="Confirm" />
+            <Button fx:id="orderButton" layoutX="10.0" layoutY="1030.0" mnemonicParsing="false" onMouseClicked="#orderButtonClick" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: a9eca2;" text="Order" />
+            <Button fx:id="backButton" layoutX="160.0" layoutY="1030.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: e9e9e5;" text="Back" visible="false" />
+            <Button fx:id="confirmButton" layoutX="10.0" layoutY="1030.0" mnemonicParsing="false" onMouseClicked="#confirmButtonClick" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: a9eca2;" text="Confirm" visible="false" />
          </children>
       </AnchorPane>
    </children>
