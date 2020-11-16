@@ -10,20 +10,21 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.sql.SQLException;
 
 public class MenuController {
 
-    @FXML ImageView Icon;
+    private MenuSlicer menuSlicer;
+    @FXML ImageView Icon, testImg;
     @FXML Button confirmButton, backButton, orderButton;
     @FXML AnchorPane menuPage, confirmPage;
 
     public void initialize(){
         confirmPage.setVisible(false);
         menuPage.setDisable(false);
+        menuSlicer = new MenuSlicer();
     }
 
-    @FXML public void orderButtonClick(MouseEvent event) throws IOException, SQLException {
+    @FXML public void orderButtonClick(MouseEvent event){
         confirmPage.setVisible(true);
         menuPage.setDisable(true);
     }
@@ -38,4 +39,10 @@ public class MenuController {
         Stage stage = (Stage) confirmButton.getScene().getWindow();
         stage.getScene().setRoot(root);
     }
+
+    //code for getting image
+//            menuSlicer.setData("http://f51fced2af20.ngrok.io/api/menus");
+//        menuSlicer.debug();
+//    Image image = menuSlicer.getImage();
+//        testImg.setImage(image);
 }

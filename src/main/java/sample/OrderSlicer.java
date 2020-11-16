@@ -1,6 +1,6 @@
 package sample;
 
-public class OrderGetter extends DataGetter {
+public class OrderSlicer extends DataSlicer {
     @Override
     public void setData(String u) {
         super.setMaxItem(12);
