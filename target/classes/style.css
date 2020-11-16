@@ -1,6 +1,6 @@
-.root {
+/*.root {
 -fx-font-family : "Arial";
-}
+}*/
 #categorybutton {
 -fx-background-color : #f02828;
 -fx-font-size: 20px;
@@ -50,10 +50,12 @@
 }
 #basebackground {
 /*-fx-background-color: radial-gradient(focus-angle 254deg , focus-distance 59% , center 37% 63% , radius 55% , #494949, #1a1a1a);*/
--fx-background-color : #1b1e1d;
+/*-fx-background-color : #1b1e1d;*/
+-fx-background-image: url("img/background.jpg");
 }
 #orderingList {
 -fx-background-color : #f24040;
+-fx-font-size: 20px;
 }
 #confirmbg {
 -fx-background-color : #f24040;

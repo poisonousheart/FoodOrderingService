@@ -3,13 +3,13 @@ package sample;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataGetter {
+public class DataSlicer {
     private List<String> data;
     private int maxItem;
 
     public void setData(String u){
-        //String tmp[] = ApiController.getMethod(u).split("[:,\"{}]");
-        String tmp[] = u.split("[:,\"{}]");
+        String tmp[] = ApiController.getMethod(u).split("[:,\"{}]");
+        //String tmp[] = u.split("[:,\"{}]");
         ArrayList<String> stmp = new ArrayList<>();
         for (int i = 0; i < tmp.length; i++) {
             if(tmp[i] != null && !tmp[i].trim().isEmpty()) {
