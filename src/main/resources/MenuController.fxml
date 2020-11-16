@@ -15,12 +15,7 @@
 
 <Pane id="basebackground" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
    <children>
-      <ImageView fitHeight="112.0" fitWidth="200.0" visible="false">
-         <image>
-            <Image url="@img/background.jpg" />
-         </image>
-      </ImageView>
-      <AnchorPane layoutY="1.0" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@style.css">
+      <AnchorPane fx:id="menuPage" layoutY="1.0" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@style.css">
          <children>
             <AnchorPane layoutY="245.0" prefHeight="813.0" prefWidth="200.0" style="-fx-background-color: #f02828;" stylesheets="@style.css">
                <children>
@@ -446,16 +441,6 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Button fx:id="backButton" layoutX="180.0" layoutY="770.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: e9e9e5;" text="Back">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="confirmButton" layoutX="10.0" layoutY="770.0" mnemonicParsing="false" onMouseClicked="#confirmButtonClick" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: a9eca2;" text="Confirm">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Button>
                   <Button fx:id="orderButton" layoutX="10.0" layoutY="770.0" mnemonicParsing="false" onMouseClicked="#orderButtonClick" prefHeight="40.0" prefWidth="330.0" style="-fx-background-color: a9eca2;" text="Order">
                      <font>
                         <Font name="System Bold" size="14.0" />
@@ -468,6 +453,21 @@
                   <Font name="System Bold" size="48.0" />
                </font>
             </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="confirmPage" layoutX="640.0" layoutY="350.0" prefHeight="360.0" prefWidth="640.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <Label alignment="CENTER" prefHeight="200.0" prefWidth="650.0" text="Confirm Order?" />
+            <Button fx:id="backButton" layoutX="400.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: e9e9e5;" text="Back">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="confirmButton" layoutX="100.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#confirmButtonClick" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: a9eca2;" text="Confirm">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
