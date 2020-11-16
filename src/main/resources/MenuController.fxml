@@ -49,7 +49,7 @@
                               <ImageView fitHeight="225.0" fitWidth="325.0" pickOnBounds="true">
                                     <Image url="@img/salmon_bento.jpg" />
                               </ImageView>
-                              <Label id="namemenu" prefHeight="50.0" prefWidth="400.0" text="Salmon Bento" GridPane.rowIndex="1">
+                              <Label id="namemenu" prefHeight="50.0" prefWidth="325.0" text="Salmon Bento" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
@@ -57,7 +57,7 @@
                                     <Insets left="10.0" right="10.0" />
                                  </padding>
                               </Label>
-                              <Label id="pricemenu" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="400.0" text="100 Baht" GridPane.rowIndex="2">
+                              <Label id="pricemenu" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="325.0" text="100 Baht" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
@@ -455,17 +455,30 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="confirmPage" layoutX="640.0" layoutY="350.0" prefHeight="360.0" prefWidth="640.0" style="-fx-background-color: white;" visible="false">
+      <AnchorPane id="confirmAnchorPane" fx:id="confirmPage" layoutX="640.0" layoutY="350.0" prefHeight="360.0" prefWidth="640.0">
          <children>
-            <Label alignment="CENTER" prefHeight="200.0" prefWidth="650.0" text="Confirm Order?" />
-            <Button fx:id="backButton" layoutX="400.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: e9e9e5;" text="Back">
+            <Label alignment="CENTER" prefHeight="200.0" prefWidth="650.0" text="Confirm Order?" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="System Bold" size="46.0" />
+               </font></Label>
+            <ImageView fitHeight="62.0" fitWidth="199.0" layoutX="381.0" layoutY="249.0">
+               <image>
+                  <Image url="@img/menubutton/backButton2.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="backButton" layoutX="400.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" prefHeight="100.0" prefWidth="160.0" style="-fx-background: transparent; -fx-background-color: transparent;" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="confirmButton" layoutX="100.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#confirmButtonClick" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: a9eca2;" text="Confirm">
+            <ImageView fitHeight="62.0" fitWidth="199.0" layoutX="81.0" layoutY="249.0">
+               <image>
+                  <Image url="@img/menubutton/confirmButton.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="confirmButton" layoutX="100.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#confirmButtonClick" prefHeight="100.0" prefWidth="160.0" style="-fx-background: transparent; -fx-background-color: transparent;" text="Confirm" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="System Bold" size="24.0" />
                </font>
             </Button>
          </children>

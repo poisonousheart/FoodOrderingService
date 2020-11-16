@@ -1,3 +1,4 @@
+/*  --------------------------------------> MenuPage <---------------------------------------------*/
 /*.root {
 -fx-font-family : "Arial";
 }*/
@@ -21,13 +22,14 @@
 -fx-font: 40px "Arial";
 }
 #namemenu {
--fx-background-color: radial-gradient(focus-angle 254deg , focus-distance 59% , center 37% 63% , radius 55% , #f46060, #f02828);
+/*-fx-background-color: radial-gradient(focus-angle 254deg , focus-distance 59% , center 37% 63% , radius 55% , #f46060, #f02828);*/
 /*-fx-background-color : #d7acd4;*/
+-fx-alignment: CENTER;
 -fx-font-size: 20px;
 -fx-font-weight: bold;
 -fx-text-fill: white;
--fx-border-color: #5f0707;
--fx-border-width: 1;
+/*-fx-border-color: #5f0707;
+-fx-border-width: 1;*/
 }
 /*#namemenu.label .text {
     -fx-fill: white;
@@ -36,16 +38,17 @@
 }*/
 #pricemenu {
 /*white, #c3bef0*/
--fx-background-color: radial-gradient(focus-angle 200deg , focus-distance 59% , center 37% 63% , radius 55% , #f57070, #f02828);
+/*-fx-background-color: radial-gradient(focus-angle 200deg , focus-distance 59% , center 37% 63% , radius 55% , #f57070, #f02828);*/
 /*-fx-background-color : #d7acd4;*/
+-fx-alignment: CENTER;
 -fx-font-size: 20px;
 -fx-font-weight: bold;
 -fx-text-fill: white;
--fx-border-color: #5f0707;
--fx-border-width: 1;
+/*-fx-border-color: #5f0707;
+-fx-border-width: 1;*/
 }
 #gridmenu {
--fx-background-color : #d38cad;
+/*-fx-background-color : #d38cad;*/
 -fx-border-width : 0;
 }
 #basebackground {
@@ -59,4 +62,19 @@
 }
 #confirmbg {
 -fx-background-color : #f24040;
+}
+
+/*  --------------------------------------> OrderStatusPage <---------------------------------------------*/
+#orderbasebackground {
+-fx-background-image: url("img/backgroundOrder.jpg");
+}
+#orderColumn {
+-fx-background-color: #FFD700;
+/*-fx-background-image: url("img/menubutton/backButton.png");*/
+}
+#confirmAnchorPane {
+-fx-background-image: url("img/confirmbackground.jpg");
+-fx-background-size: 640px 360px;
+-fx-background-color: linear-gradient(from 0% 50% to 100% 50%, rgba(244,244,244,1), rgba(244,244,244,0));
+/*-fx-background-opacity: 0.5; */
 }
