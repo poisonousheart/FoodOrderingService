@@ -84,7 +84,6 @@ public class MenuBuilder {
         menuPrice.setPadding(new Insets(0,10,0,10));
         menuPrice.setId("pricemenu");
         gridPane.addRow(2, menuPrice);
-
         return gridPane;
     }
 }

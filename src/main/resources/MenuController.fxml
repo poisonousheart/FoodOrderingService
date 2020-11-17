@@ -27,7 +27,7 @@
                   <Button id="b6" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#categoryButtonClick" prefHeight="100.0" prefWidth="200.0" styleClass="categorybutton" stylesheets="@style.css" text="Beverages" />
                </children>
             </AnchorPane>
-            <ScrollPane layoutX="192.0" layoutY="346.0" prefHeight="595.0" prefWidth="1358.0" style="-fx-background: transparent; -fx-background-color: transparent;">
+            <ScrollPane fx:id="menuDisplayScroll" layoutX="192.0" layoutY="346.0" prefHeight="595.0" prefWidth="1358.0" style="-fx-background: transparent; -fx-background-color: transparent;">
               <content>
                 <AnchorPane fx:id="menuDisplayPane" layoutX="20.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1338.0" />
               </content>
