@@ -13,9 +13,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MenuController.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("BookingController.fxml"));
         primaryStage.setTitle("Satoya");
         primaryStage.setScene(new Scene(root, 1920, 1080));
+        primaryStage.setAlwaysOnTop(true);
         primaryStage.setFullScreen(true);
         primaryStage.show();
     }
