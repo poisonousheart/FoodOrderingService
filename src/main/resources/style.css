@@ -70,6 +70,17 @@
 .scroll-bar:horizontal:focused {
  -fx-background-color: transparent,rgb(96,96,96),rgb(96,96,96);
 }
+/*  --------------------------------------> BookingPage <---------------------------------------------*/
+#bookingAnchorPane {
+-fx-background-image: url("img/bookingPage.jpg");
+-fx-background-size: 1920px 1080px;
+}
+#bookingboard {
+-fx-background-color: white;
+-fx-border-color: #f13939;
+-fx-border-width: 5;
+}
+}
 /*  --------------------------------------> MenuPage <---------------------------------------------*/
 /*.root {
 -fx-font-family : "Arial";
