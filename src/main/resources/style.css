@@ -148,6 +148,12 @@
 #orderButton {
 -fx-cursor: hand;
 }
+#categoryName {
+-fx-border-color: black;
+-fx-border-width: 3;
+-fx-background-color: #f13939;
+/*-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #ffd505, #ff942e);*/
+}
 
 /*  --------------------------------------> OrderStatusPage <---------------------------------------------*/
 #orderbasebackground {
