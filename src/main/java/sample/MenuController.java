@@ -1,24 +1,32 @@
 package sample;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
+import javafx.animation.Interpolator;
+import javafx.animation.Transition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.util.Duration;
 
 import java.io.*;
 
 public class MenuController {
 
+    Timeline timeline = new Timeline();
     private MenuSlicer menuSlicer;
     private MenuBuilder menuBuilder;
     @FXML Label categoryName;
-    @FXML Button confirmButton, backButton, orderButton,b1,b2,b3,b4,b5,b6;
+    @FXML Button confirmButton, backButton, orderButton,b1,b2,b3,b4,b5,b6,riceCate,noodleCate,hotpotCate,appetizerCate,sushiCate,beverageCate;
     @FXML AnchorPane menuPage, confirmPage, menuDisplayPane;
 
     public void initialize() throws IOException{
@@ -51,7 +59,19 @@ public class MenuController {
             menuDisplayPane.getChildren().add(menu);
             yLayout += i % maxPerLine==2?350:0;
         }
+
+        Duration startDuration = Duration.ZERO;
+        Duration endDuration = Duration.seconds(0.5);
+
+        KeyValue startKeyValue = new KeyValue(categoryName.translateYProperty(), 20);
+        KeyFrame startKeyFrame = new KeyFrame(startDuration, startKeyValue);
+        KeyValue endKeyValue = new KeyValue(categoryName.translateYProperty(), -20);
+        KeyFrame endKeyFrame = new KeyFrame(endDuration, endKeyValue);
+
+        // Create a Timeline
+        timeline = new Timeline(startKeyFrame, endKeyFrame);
     }
+
 
     @FXML public void orderButtonClick(MouseEvent event){
         confirmPage.setVisible(true);
@@ -79,7 +99,31 @@ public class MenuController {
             else if (id.equals("b5")) categoryName.setText("Sushi");
             else if (id.equals("b6"))categoryName.setText("Beverages");
             categoryName.setAlignment(Pos.CENTER);
-
+            timeline.playFromStart();
+            TextSizeTransition trans = new TextSizeTransition(categoryName, 2, 50,Duration.seconds(0.5));
+            trans.play();
     }
 
+    @FXML public void mouseEntered(MouseEvent event) {
+        Button button = (Button) event.getSource();
+        String id = button.getId();
+        if(id.equals("b1")) riceCate.setText("Rices >>");
+        else if (id.equals("b2")) noodleCate.setText("Noodles >>");
+        else if (id.equals("b3")) hotpotCate.setText("Hot Pots >>");
+        else if (id.equals("b4")) appetizerCate.setText("Appetizers >>");
+        else if (id.equals("b5")) sushiCate.setText("Sushi >>");
+        else if (id.equals("b6"))beverageCate.setText("Beverages >>");
+        categoryName.setAlignment(Pos.CENTER);
+    }
+
+    @FXML public void mouseExited(MouseEvent event) {
+        Button button = (Button) event.getSource();
+        String id = button.getId();
+        if (id.equals("b1")) riceCate.setText("Rices");
+        else if (id.equals("b2")) noodleCate.setText("Noodles");
+        else if (id.equals("b3")) hotpotCate.setText("Hot Pots");
+        else if (id.equals("b4")) appetizerCate.setText("Appetizers");
+        else if (id.equals("b5")) sushiCate.setText("Sushi");
+        else if (id.equals("b6")) beverageCate.setText("Beverages");
+    }
 }
