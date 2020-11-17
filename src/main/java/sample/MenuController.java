@@ -26,7 +26,7 @@ public class MenuController {
         menuPage.setDisable(false);
 
         categoryName.setText("Rices");
-        categoryName.setAlignment(Pos.CENTER);
+        //categoryName.setAlignment(Pos.CENTER);
         menuSlicer = new MenuSlicer();
         menuBuilder = new MenuBuilder();
         int xLayout = 20, yLayout = 0, maxPerLine = 3;
