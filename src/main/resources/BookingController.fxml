@@ -1,39 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BookingController">
    <children>
-      <Button fx:id="bookButton" layoutX="952.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#bookingButtonClick" prefHeight="50.0" prefWidth="100.0" text="Book">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Label layoutX="599.0" layoutY="426.0" text="Please input the number of customers">
+      <Label layoutX="600.0" layoutY="400.0" text="Please input the number of customers">
          <font>
             <Font size="40.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="amount" layoutX="807.0" layoutY="519.0" prefHeight="50.0" prefWidth="100.0" value="2">
-         <items>
-            <FXCollections fx:factory="observableArrayList">
-               <String fx:value="2" />
-               <String fx:value="3" />
-               <String fx:value="4" />
-               <String fx:value="5" />
-               <String fx:value="6" />
-               <String fx:value="7" />
-               <String fx:value="8" />
-               <String fx:value="9" />
-               <String fx:value="10" />
-            </FXCollections>
-         </items>
-      </ChoiceBox>
+      <Button fx:id="bookButton" layoutX="875.0" layoutY="620.0" mnemonicParsing="false" onMouseClicked="#bookingButtonClick" prefHeight="50.0" prefWidth="100.0" text="Book">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label fx:id="amountLabel" alignment="CENTER_RIGHT" layoutX="860.0" layoutY="480.0" prefHeight="120.0" prefWidth="100.0" text="1">
+         <font>
+            <Font size="80.0" />
+         </font>
+      </Label>
+      <Button fx:id="increaseButton" layoutX="770.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#increaseButtonClick" prefHeight="50.0" prefWidth="50.0" text="+">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="decreaseButton" layoutX="1020.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#decreaseButtonClick" prefHeight="50.0" prefWidth="50.0" text="-">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
