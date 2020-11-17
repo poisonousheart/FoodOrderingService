@@ -19,12 +19,12 @@
          <children>
             <AnchorPane layoutY="245.0" prefHeight="813.0" prefWidth="200.0" style="-fx-background-color: #f02828;" stylesheets="@style.css">
                <children>
-                  <Button id="b1" layoutY="6.0" mnemonicParsing="false" onMouseClicked="#categoryButtonClick" prefHeight="100.0" prefWidth="200.0" styleClass="categorybutton" stylesheets="@style.css" text="Rices" />
-                  <Button id="b2" layoutY="106.0" mnemonicParsing="false" onMouseClicked="#categoryButtonClick" prefHeight="100.0" prefWidth="200.0" styleClass="categorybutton" stylesheets="@style.css" text="Noodles" />
-                  <Button id="b3" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#categoryButtonClick" prefHeight="100.0" prefWidth="200.0" styleClass="categorybutton" stylesheets="@style.css" text="Hot Pots" />
-                  <Button id="b4" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#categoryButtonClick" prefHeight="100.0" prefWidth="200.0" styleClass="categorybutton" stylesheets="@style.css" text="Appetizers" />
-                  <Button id="b5" layoutY="406.0" mnemonicParsing="false" onMouseClicked="#categoryButtonClick" prefHeight="100.0" prefWidth="200.0" styleClass="categorybutton" stylesheets="@style.css" text="Sushi" />
-                  <Button id="b6" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#categoryButtonClick" prefHeight="100.0" prefWidth="200.0" styleClass="categorybutton" stylesheets="@style.css" text="Beverages" />
+                  <Button id="b1" fx:id="riceCate" layoutY="6.0" mnemonicParsing="false" onMouseClicked="#categoryButtonClick" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="100.0" prefWidth="200.0" styleClass="categorybutton" stylesheets="@style.css" text="Rices" />
+                  <Button id="b2" fx:id="noodleCate" layoutY="106.0" mnemonicParsing="false" onMouseClicked="#categoryButtonClick" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="100.0" prefWidth="200.0" styleClass="categorybutton" stylesheets="@style.css" text="Noodles" />
+                  <Button id="b3" fx:id="hotpotCate" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#categoryButtonClick" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="100.0" prefWidth="200.0" styleClass="categorybutton" stylesheets="@style.css" text="Hot Pots" />
+                  <Button id="b4" fx:id="appetizerCate" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#categoryButtonClick" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="100.0" prefWidth="200.0" styleClass="categorybutton" stylesheets="@style.css" text="Appetizers" />
+                  <Button id="b5" fx:id="sushiCate" layoutY="406.0" mnemonicParsing="false" onMouseClicked="#categoryButtonClick" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="100.0" prefWidth="200.0" styleClass="categorybutton" stylesheets="@style.css" text="Sushi" />
+                  <Button id="b6" fx:id="beverageCate" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#categoryButtonClick" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="100.0" prefWidth="200.0" styleClass="categorybutton" stylesheets="@style.css" text="Beverages" />
                </children>
             </AnchorPane>
             <ScrollPane fx:id="menuDisplayScroll" layoutX="192.0" layoutY="346.0" prefHeight="595.0" prefWidth="1358.0" style="-fx-background: transparent; -fx-background-color: transparent;">
@@ -138,7 +138,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Button fx:id="orderButton" layoutX="10.0" layoutY="770.0" mnemonicParsing="false" onMouseClicked="#orderButtonClick" prefHeight="40.0" prefWidth="330.0" style="-fx-background-color: a9eca2;" text="Order">
+                  <Button id="orderButton" fx:id="orderButton" layoutX="10.0" layoutY="770.0" mnemonicParsing="false" onMouseClicked="#orderButtonClick" prefHeight="40.0" prefWidth="330.0" style="-fx-background-color: a9eca2;" text="Order">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -163,7 +163,7 @@
                   <Image url="@img/menubutton/backButton2.png" />
                </image>
             </ImageView>
-            <Button fx:id="backButton" layoutX="400.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" prefHeight="100.0" prefWidth="160.0" style="-fx-background: transparent; -fx-background-color: transparent;" text="Back" textFill="WHITE">
+            <Button fx:id="backButton" layoutX="381.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" prefHeight="69.0" prefWidth="199.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-cursor: hand;" text="Back" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -173,7 +173,7 @@
                   <Image url="@img/menubutton/confirmButton.png" />
                </image>
             </ImageView>
-            <Button fx:id="confirmButton" layoutX="100.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#confirmButtonClick" prefHeight="100.0" prefWidth="160.0" style="-fx-background: transparent; -fx-background-color: transparent;" text="Confirm" textFill="WHITE">
+            <Button fx:id="confirmButton" layoutX="81.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#confirmButtonClick" prefHeight="69.0" prefWidth="200.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-cursor: hand;" text="Confirm" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
