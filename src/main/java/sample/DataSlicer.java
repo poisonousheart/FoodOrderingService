@@ -8,8 +8,8 @@ public class DataSlicer {
     private int maxItem;
 
     public void setData(String u){
-        String tmp[] = ApiController.getMethod(u).split("[:,\"{}]");
-        //String tmp[] = u.split("[:,\"{}]");
+        //String tmp[] = ApiController.getMethod(u).split("[:,\"{}]");
+        String tmp[] = u.split("[:\\]\\[,\"{}]");
         ArrayList<String> stmp = new ArrayList<>();
         for (int i = 0; i < tmp.length; i++) {
             if(tmp[i] != null && !tmp[i].trim().isEmpty()) {
@@ -17,7 +17,8 @@ public class DataSlicer {
             }
         }
         this.data = stmp.subList(0, maxItem);
-
+        System.out.println("---Slicer debug---");
+        this.debug();
     }
 
     void setMaxItem(int maxItem) {

@@ -2,18 +2,18 @@
 /*.root {
 -fx-font-family : "Arial";
 }*/
-#categorybutton {
+.categorybutton {
 -fx-background-color : #f02828;
 -fx-font-size: 20px;
 -fx-text-fill: white;
 }
-#categorybutton:hover {
+.categorybutton:hover {
 -fx-background-image: url("img/menubutton/buttonOnHover.jpg");
 }
 /*.button:pressed {
 -fx-background-color : #ff80aa;
 }*/
-#categorybutton:focused {
+.categorybutton:focused {
 -fx-background-image: url("img/menubutton/buttonOnPressed.jpg");
 /*-fx-background-color : #8f0a0a;*/
 -fx-font-size: 30px;

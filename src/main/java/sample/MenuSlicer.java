@@ -30,7 +30,7 @@ public class MenuSlicer extends DataSlicer {
     }
 
     public Image getImage() throws IOException {
-        String s = getData().get(13);
+        String s = getData().get(12);
         byte[] imageBytes = Base64.getMimeDecoder().decode(s);
         InputStream readedImage = new ByteArrayInputStream(imageBytes);
         BufferedImage bfImage = ImageIO.read(readedImage);
