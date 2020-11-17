@@ -56,6 +56,6 @@
             <Font size="40.0" />
          </font>
       </Text>
-      <Button fx:id="backButton" layoutX="828.0" layoutY="933.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" prefHeight="99.0" prefWidth="265.0" style="-fx-background: transparent; -fx-background-color: transparent;" />
+      <Button fx:id="backButton" layoutX="828.0" layoutY="933.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" prefHeight="99.0" prefWidth="265.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-cursor: hand;" />
     </children>
 </AnchorPane>
