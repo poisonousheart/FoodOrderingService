@@ -179,3 +179,7 @@
 -fx-background-color: linear-gradient(from 0% 50% to 100% 50%, rgba(244,244,244,1), rgba(244,244,244,0));
 /*-fx-background-opacity: 0.5; */
 }
+#orderPane{
+-fx-background-color: white;
+-fx-border-color: #f13939;
+-fx-border-width: 5;}

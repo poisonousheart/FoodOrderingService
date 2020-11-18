@@ -86,4 +86,16 @@ public class MenuBuilder {
         gridPane.addRow(2, menuPrice);
         return gridPane;
     }
+
+    public String getMenuId(){
+        return menuSlicer.getMenuId();
+    }
+
+    public String getMenuName(){
+        return menuSlicer.getMenuName();
+    }
+
+    public String getPrice(){
+        return menuSlicer.getPrice();
+    }
 }

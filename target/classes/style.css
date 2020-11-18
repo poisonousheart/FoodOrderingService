@@ -70,6 +70,16 @@
 .scroll-bar:horizontal:focused {
  -fx-background-color: transparent,rgb(96,96,96),rgb(96,96,96);
 }
+/*  --------------------------------------> BookingPage <---------------------------------------------*/
+#bookingAnchorPane {
+-fx-background-image: url("img/bookingPage.jpg");
+-fx-background-size: 1920px 1080px;
+}
+#bookingboard {
+-fx-background-color: white;
+-fx-border-color: #f13939;
+-fx-border-width: 5;
+}
 /*  --------------------------------------> MenuPage <---------------------------------------------*/
 /*.root {
 -fx-font-family : "Arial";
@@ -148,6 +158,12 @@
 #orderButton {
 -fx-cursor: hand;
 }
+#categoryName {
+-fx-border-color: black;
+-fx-border-width: 3;
+-fx-background-color: #f13939;
+/*-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #ffd505, #ff942e);*/
+}
 
 /*  --------------------------------------> OrderStatusPage <---------------------------------------------*/
 #orderbasebackground {
@@ -163,3 +179,7 @@
 -fx-background-color: linear-gradient(from 0% 50% to 100% 50%, rgba(244,244,244,1), rgba(244,244,244,0));
 /*-fx-background-opacity: 0.5; */
 }
+#orderPane{
+-fx-background-color: white;
+-fx-border-color: #f13939;
+-fx-border-width: 5;}
