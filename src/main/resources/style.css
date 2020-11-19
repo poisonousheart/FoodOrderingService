@@ -70,6 +70,20 @@
 .scroll-bar:horizontal:focused {
  -fx-background-color: transparent,rgb(96,96,96),rgb(96,96,96);
 }
+/*  --------------------------------------> ReserveTablePage <---------------------------------------------*/
+#reserveAnchorPane {
+-fx-background-image: url("img/reserveBackground.jpg");
+-fx-background-size: 1920px 1080px;
+}
+#reserveButton {
+-fx-background-color:
+        linear-gradient(#ffd1dc, #ffd1dc),
+        radial-gradient(center 50% -40%, radius 200%, #f57070 45%, #f02828 50%);
+-fx-background-radius: 6, 5;
+-fx-background-insets: 0, 1;
+-fx-effect: dropshadow( three-pass-box , #white , 5, 0.0 , 0 , 1 );
+-fx-text-fill: white;
+}
 /*  --------------------------------------> BookingPage <---------------------------------------------*/
 #bookingAnchorPane {
 -fx-background-image: url("img/bookingPage.jpg");
@@ -179,7 +193,8 @@
 -fx-background-color: linear-gradient(from 0% 50% to 100% 50%, rgba(244,244,244,1), rgba(244,244,244,0));
 /*-fx-background-opacity: 0.5; */
 }
-#orderPane{
+#orderPane {
 -fx-background-color: white;
 -fx-border-color: #f13939;
--fx-border-width: 5;}
+-fx-border-width: 5;
+}
