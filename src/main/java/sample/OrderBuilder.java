@@ -21,7 +21,8 @@ public class OrderBuilder {
         //create gridpane
         GridPane gridPane = new GridPane();
         gridPane.setLayoutX(0);
-        gridPane.setLayoutY(20);
+        gridPane.setLayoutY(0);
+        gridPane.setPadding(new Insets(20,0,10,0));
         gridPane.setPrefHeight(150);
         gridPane.setPrefWidth(340);
         gridPane.setAlignment(Pos.CENTER);
@@ -64,9 +65,10 @@ public class OrderBuilder {
         //set menu image row 1
         ImageView menuImg = (ImageView) menu.getChildren().get(0);
         ImageView orderImg = new ImageView();
+        orderImg.setId("orderImg");
         orderImg.setImage(menuImg.getImage());
-        orderImg.setFitHeight(150);
-        orderImg.setFitWidth(250);
+        orderImg.setFitHeight(100);
+        orderImg.setFitWidth(200);
         orderImg.setPreserveRatio(true);
         orderImg.setPickOnBounds(true);
         gridPane.addRow(0,orderImg);
@@ -80,7 +82,8 @@ public class OrderBuilder {
         String name = tmp[tmp.length-1];
         menuName.setText(name);
 
-        menuName.setPadding(new Insets(0,10,0,10));
+        menuName.setPadding(new Insets(0,20,0,0));
+        menuName.setAlignment(Pos.CENTER_RIGHT);
         menuName.setId("ordermenu");
         gridPane.addRow(1, menuName);
 
