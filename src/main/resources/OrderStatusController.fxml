@@ -17,13 +17,13 @@
                 <Image url="@img/satoya_icon.jpg" />
             </image>
         </ImageView>
-      <TableView layoutX="201.0" layoutY="225.0" prefHeight="679.0" prefWidth="1553.0" stylesheets="style.css">
+      <TableView fx:id="orderTable" layoutX="201.0" layoutY="225.0" prefHeight="679.0" prefWidth="1553.0" stylesheets="style.css">
         <columns>
-          <TableColumn id="orderColumn" prefWidth="391.0" text="Menu Name" />
-          <TableColumn id="orderColumn" minWidth="0.0" prefWidth="227.0" text="Quantity" />
-            <TableColumn id="orderColumn" prefWidth="246.0" text="Ordered at" />
-            <TableColumn id="orderColumn" prefWidth="283.0" text="Status" />
-            <TableColumn id="orderColumn" minWidth="0.0" prefWidth="405.0" text="Total Price" />
+          <TableColumn id="orderColumn" fx:id="menuNameCol" prefWidth="377.0" text="Menu Name" />
+          <TableColumn id="orderColumn" fx:id="qntCol" minWidth="0.0" prefWidth="243.0" text="Quantity" />
+            <TableColumn id="orderColumn" fx:id="orderTimeCol" prefWidth="326.0" text="Ordered at" />
+            <TableColumn id="orderColumn" fx:id="statusCol" prefWidth="301.0" text="Status" />
+            <TableColumn id="orderColumn" fx:id="priceCol" minWidth="0.0" prefWidth="305.0" text="Total Price" />
         </columns>
       </TableView>
       <Text fill="WHITE" layoutX="1651.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table No. " wrappingWidth="206.6708984375">

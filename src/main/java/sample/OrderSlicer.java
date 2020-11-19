@@ -3,22 +3,20 @@ package sample;
 public class OrderSlicer extends DataSlicer {
     @Override
     public void setData(String u) {
-        super.setMaxItem(12);
+        super.setMaxItem(14);
         super.setData(u);
     }
 
-    public String getTableNo(){
-        return super.getData().get(5);
-    }
-
     public String getStatus(){
-        return super.getData().get(7);
+        int index = super.getData().indexOf("menu_status");
+        return super.getData().get(index+1);
     }
 
     public String getTimeCreated(){
-        String[] tmp = super.getData().get(9).split("T");
-        String[] tmp2 = super.getData().get(11).split("\\.");
-        String time = tmp[1] +":"+super.getData().get(10)+":"+ tmp2[0];
+        int index = super.getData().indexOf("created_at");
+        String[] tmp = super.getData().get(index+1).split("T");
+        String[] tmp2 = super.getData().get(index+3).split("\\.");
+        String time = tmp[1] +":"+super.getData().get(index+2)+":"+ tmp2[0];
         System.out.println(time);
         return time;
     }

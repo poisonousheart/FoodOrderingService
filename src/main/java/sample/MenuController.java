@@ -143,16 +143,41 @@ public class MenuController {
     @FXML private void menuClickEvent(MouseEvent event){
         GridPane menu = (GridPane) event.getSource();
         //System.out.println(menu.getChildren().get(1));
-        //set action on plus button
+        String[] menuNametmp = String.valueOf(menu.getChildren().get(1)).split("'");
+        String menuName = menuNametmp[menuNametmp.length-1];
 
+        boolean found = false;
+        GridPane foundMenu = new GridPane();
+        for (Node n:orderDisplayPane.getChildren()) {
+            GridPane item = (GridPane) n;
 
-        //create order and add to right pane
-        GridPane order = orderBuilder.createOrder(menu);
+            String[] itemNameTmp = String.valueOf(item.getChildren().get(1)).split("'");
+            String itemName = itemNameTmp[itemNameTmp.length-1];
 
-        //set action on del button
-        order.getChildren().get(6).setOnMouseClicked(this::orderDelEvent);
+            if(itemName.equals(menuName)){
+                found = true;
+                foundMenu = item;
+                break;
+            }
+        }
 
-        orderDisplayPane.getChildren().add(order);
+        //menu already existed in order list
+        if(found){
+            Label qntLabel = (Label)foundMenu.getChildren().get(4);
+            int qnt = Integer.valueOf(qntLabel.getText());
+            if(qnt < 10)
+                qntLabel.setText(String.valueOf(qnt+1));
+        }
+        //menu not found in order list
+        else{
+            //create order and add to right pane
+            GridPane order = orderBuilder.createOrder(menu);
+
+            //set action on del button
+            order.getChildren().get(6).setOnMouseClicked(this::orderDelEvent);
+
+            orderDisplayPane.getChildren().add(order);
+        }
 
         orderDisplay();
     }
