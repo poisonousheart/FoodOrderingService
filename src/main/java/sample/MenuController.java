@@ -238,12 +238,11 @@ public class MenuController {
                 qntLabel.setText(String.valueOf(qnt+1));
                 String[] priceString = String.valueOf(foundMenu.getChildren().get(2)).split("'");
                 String priceTmp = priceString[priceString.length-1];
+                priceTmp = priceTmp.replace(",","");
                 int price = Integer.valueOf(priceTmp.split(" ")[0]);
                 price += price/qnt;
                 Label priceText = (Label)foundMenu.getChildren().get(2);
                 priceText.setText(NumberFormat.getNumberInstance(Locale.US).format(price)+" Baht");
-                sumPriceDisplay();
-
             }
         }
 
@@ -263,9 +262,8 @@ public class MenuController {
 
             orderDisplayPane.getChildren().add(order);
         }
-
-        sumPriceDisplay();
-
+        int sum = sumPriceDisplay();
+        totalPrice.setText(NumberFormat.getNumberInstance(Locale.US).format(sum)+" Baht");
         orderDisplay();
     }
 
@@ -274,7 +272,8 @@ public class MenuController {
         Button delBtn = (Button) event.getSource();
         orderDisplayPane.getChildren().remove(delBtn.getParent());
         orderDisplay();
-        sumPriceDisplay();
+        int sum = sumPriceDisplay();
+        totalPrice.setText(NumberFormat.getNumberInstance(Locale.US).format(sum)+" Baht");
 
     }
 
@@ -288,12 +287,13 @@ public class MenuController {
             qntLabel.setText(String.valueOf(quantity+1));
             String[] priceString = String.valueOf(menu.getChildren().get(2)).split("'");
             String priceTmp = priceString[priceString.length-1];
+            priceTmp = priceTmp.replace(",","");
             int price = Integer.valueOf(priceTmp.split(" ")[0]);
             price += price/quantity;
             Label priceText = (Label)menu.getChildren().get(2);
             priceText.setText(NumberFormat.getNumberInstance(Locale.US).format(price)+" Baht");
-            sumPriceDisplay();
-
+            int sum = sumPriceDisplay();
+            totalPrice.setText(NumberFormat.getNumberInstance(Locale.US).format(sum)+" Baht");
         }
 
     }
@@ -308,11 +308,13 @@ public class MenuController {
             qntLabel.setText(String.valueOf(quantity-1));
             String[] priceString = String.valueOf(menu.getChildren().get(2)).split("'");
             String priceTmp = priceString[priceString.length-1];
+            priceTmp = priceTmp.replace(",","");
             int price = Integer.valueOf(priceTmp.split(" ")[0]);
             price -= price/quantity;
             Label priceText = (Label)menu.getChildren().get(2);
             priceText.setText(NumberFormat.getNumberInstance(Locale.US).format(price)+" Baht");
-            sumPriceDisplay();
+            int sum = sumPriceDisplay();
+            totalPrice.setText(NumberFormat.getNumberInstance(Locale.US).format(sum)+" Baht");
         }
     }
 
@@ -321,19 +323,20 @@ public class MenuController {
         for (Node n:orderDisplayPane.getChildren()) {
             GridPane o = (GridPane) n;
             o.setLayoutY(yLayout);
-            yLayout += 150;
+            yLayout += 195;
         }
     }
 
-    @FXML private void sumPriceDisplay(){
+    @FXML private int sumPriceDisplay(){
         int sum = 0;
         for (Node n:orderDisplayPane.getChildren()) {
             GridPane p = (GridPane) n;
             Label priceLabel = (Label)p.getChildren().get(2);
             String priceString = String.valueOf(priceLabel).split("'")[1].split(" ")[0];
+            priceString = priceString.replace(",","");
             sum += Integer.parseInt(priceString);
         }
-        totalPrice.setText(NumberFormat.getNumberInstance(Locale.US).format(sum)+" Baht");
+        return sum;
     }
 
 

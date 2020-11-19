@@ -20,10 +20,8 @@ public class OrderBuilder {
 
         //create gridpane
         GridPane gridPane = new GridPane();
-        gridPane.setLayoutX(0);
-        gridPane.setLayoutY(0);
-        gridPane.setPadding(new Insets(20,0,10,0));
-        gridPane.setPrefHeight(150);
+        gridPane.setPadding(new Insets(20,0,5,0));
+        gridPane.setPrefHeight(200);
         gridPane.setPrefWidth(340);
         gridPane.setAlignment(Pos.CENTER);
         gridPane.setId("orderPane");
@@ -37,7 +35,7 @@ public class OrderBuilder {
 
         //set grid row
         RowConstraints row1 = new RowConstraints();
-        row1.setMaxHeight(225);
+        row1.setMaxHeight(100);
         row1.setMinHeight(10);
         row1.setVgrow(Priority.SOMETIMES);
 
@@ -68,22 +66,22 @@ public class OrderBuilder {
         orderImg.setId("orderImg");
         orderImg.setImage(menuImg.getImage());
         orderImg.setFitHeight(100);
-        orderImg.setFitWidth(200);
-        orderImg.setPreserveRatio(true);
+        orderImg.setFitWidth(150);
+        orderImg.setPreserveRatio(false);
         orderImg.setPickOnBounds(true);
         gridPane.addRow(0,orderImg);
 
         //set menu name row 2
         Label menuName = new Label();
         menuName.setPrefHeight(150);
-        menuName.setPrefWidth(325);
+        menuName.setPrefWidth(340);
 
         String[] tmp = String.valueOf(menu.getChildren().get(1)).split("'");
         String name = tmp[tmp.length-1];
         menuName.setText(name);
 
-        menuName.setPadding(new Insets(0,20,0,0));
-        menuName.setAlignment(Pos.CENTER_RIGHT);
+        menuName.setPadding(new Insets(0,0,0,150));
+        menuName.setAlignment(Pos.CENTER_LEFT);
         menuName.setId("ordermenu");
         gridPane.addRow(1, menuName);
 
