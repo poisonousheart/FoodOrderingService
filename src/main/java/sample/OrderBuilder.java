@@ -11,7 +11,11 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 
+import java.util.ArrayList;
+
 public class OrderBuilder {
+
+    private static ArrayList<String> orderList = new ArrayList<>();
 
     public GridPane createOrder(GridPane menu){
 //        System.out.println(menu.getChildren().get(0));
@@ -129,7 +133,8 @@ public class OrderBuilder {
 
         gridPane.addRow(3, minBtn, qnt, plusBtn, delBtn);
 
-
         return gridPane;
     }
+
+
 }

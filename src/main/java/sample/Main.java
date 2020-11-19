@@ -13,7 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("BookingController.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("ReserveTableController.fxml"));
         primaryStage.setTitle("Satoya");
         primaryStage.setScene(new Scene(root, 1920, 1080));
         primaryStage.setAlwaysOnTop(true);

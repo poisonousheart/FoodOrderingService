@@ -81,8 +81,8 @@
         radial-gradient(center 50% -40%, radius 200%, #f57070 45%, #f02828 50%);
 -fx-background-radius: 6, 5;
 -fx-background-insets: 0, 1;
--fx-effect: dropshadow( three-pass-box , #white , 5, 0.0 , 0 , 1 );
 -fx-text-fill: white;
+ -fx-cursor: hand;
 }
 /*  --------------------------------------> BookingPage <---------------------------------------------*/
 #bookingAnchorPane {
@@ -90,6 +90,7 @@
 -fx-background-size: 1920px 1080px;
 }
 #bookingboard {
+ -fx-background-image: url("img/bookingBoardBackground.jpg");
 -fx-background-color: white;
 -fx-border-color: #f13939;
 -fx-border-width: 5;

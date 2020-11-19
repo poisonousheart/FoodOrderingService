@@ -31,6 +31,7 @@ public class MenuController {
     @FXML ScrollPane menuDisplayScroll, orderDisplayScroll;
 
     public void initialize() throws IOException{
+        tableNo.setText(ReserveTableController.tableNo);
         confirmPage.setVisible(false);
         menuPage.setDisable(false);
 
