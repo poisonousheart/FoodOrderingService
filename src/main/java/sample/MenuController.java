@@ -22,7 +22,7 @@ public class MenuController {
     private Timeline timeline = new Timeline();
     private MenuBuilder menuBuilder;
     private OrderBuilder orderBuilder;
-    @FXML Label categoryName;
+    @FXML Label categoryName, totalPrice;
     @FXML Button confirmButton, backButton, orderButton,b1,b2,b3,b4,b5,b6,riceCate,noodleCate,hotpotCate,appetizerCate,sushiCate,beverageCate;
     @FXML AnchorPane menuPage, confirmPage, menuDisplayPane, orderDisplayPane;
     @FXML ScrollPane menuDisplayScroll, orderDisplayScroll;
@@ -165,9 +165,19 @@ public class MenuController {
         if(found){
             Label qntLabel = (Label)foundMenu.getChildren().get(4);
             int qnt = Integer.valueOf(qntLabel.getText());
-            if(qnt < 10)
+            if(qnt < 10){
                 qntLabel.setText(String.valueOf(qnt+1));
+                String[] priceString = String.valueOf(foundMenu.getChildren().get(2)).split("'");
+                String priceTmp = priceString[priceString.length-1];
+                int price = Integer.valueOf(priceTmp.split(" ")[0]);
+                price += price/qnt;
+                Label priceText = (Label)foundMenu.getChildren().get(2);
+                priceText.setText(price+" Baht");
+                sumPriceDisplay();
+
+            }
         }
+
         //menu not found in order list
         else{
             //create order and add to right pane
@@ -176,8 +186,16 @@ public class MenuController {
             //set action on del button
             order.getChildren().get(6).setOnMouseClicked(this::orderDelEvent);
 
+            //-----------------------------------------//
+            //set action on plus button
+            order.getChildren().get(5).setOnMouseClicked(this::plusEvent);
+            //set action on minus button
+            order.getChildren().get(3).setOnMouseClicked(this::minusEvent);
+
             orderDisplayPane.getChildren().add(order);
         }
+
+        sumPriceDisplay();
 
         orderDisplay();
     }
@@ -187,8 +205,47 @@ public class MenuController {
         Button delBtn = (Button) event.getSource();
         orderDisplayPane.getChildren().remove(delBtn.getParent());
         orderDisplay();
+        sumPriceDisplay();
+
     }
 
+    @FXML private void plusEvent(MouseEvent event){
+        Button btn = (Button)event.getSource();
+        GridPane menu = (GridPane)btn.getParent();
+        Label qntLabel = (Label)menu.getChildren().get(4);
+        String qnt = String.valueOf(qntLabel).split("'")[1];
+        int quantity = Integer.valueOf(qnt);
+        if(quantity < 10){
+            qntLabel.setText(String.valueOf(quantity+1));
+            String[] priceString = String.valueOf(menu.getChildren().get(2)).split("'");
+            String priceTmp = priceString[priceString.length-1];
+            int price = Integer.valueOf(priceTmp.split(" ")[0]);
+            price += price/quantity;
+            Label priceText = (Label)menu.getChildren().get(2);
+            priceText.setText(price+" Baht");
+            sumPriceDisplay();
+
+        }
+
+    }
+
+    @FXML private void minusEvent(MouseEvent event){
+        Button btn = (Button)event.getSource();
+        GridPane menu = (GridPane)btn.getParent();
+        Label qntLabel = (Label)menu.getChildren().get(4);
+        String qnt = String.valueOf(qntLabel).split("'")[1];
+        int quantity = Integer.valueOf(qnt);
+        if(quantity > 1){
+            qntLabel.setText(String.valueOf(quantity-1));
+            String[] priceString = String.valueOf(menu.getChildren().get(2)).split("'");
+            String priceTmp = priceString[priceString.length-1];
+            int price = Integer.valueOf(priceTmp.split(" ")[0]);
+            price -= price/quantity;
+            Label priceText = (Label)menu.getChildren().get(2);
+            priceText.setText(price+" Baht");
+            sumPriceDisplay();
+        }
+    }
 
     @FXML private void orderDisplay(){
         int yLayout = 0;
@@ -198,5 +255,17 @@ public class MenuController {
             yLayout += 150;
         }
     }
+
+    @FXML private void sumPriceDisplay(){
+        int sum = 0;
+        for (Node n:orderDisplayPane.getChildren()) {
+            GridPane p = (GridPane) n;
+            Label priceLabel = (Label)p.getChildren().get(2);
+            String priceString = String.valueOf(priceLabel).split("'")[1].split(" ")[0];
+            sum += Integer.parseInt(priceString);
+        }
+        totalPrice.setText(sum+" Baht");
+    }
+
 
 }

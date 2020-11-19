@@ -122,6 +122,7 @@ public class OrderBuilder {
             int quantity = Integer.valueOf(qnt.getText());
             if(quantity < 10){
                 qnt.setText(String.valueOf(quantity+1));
+
             }
         });
 

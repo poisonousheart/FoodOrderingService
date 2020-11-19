@@ -3,7 +3,7 @@ package sample;
 public class OrderSlicer extends DataSlicer {
     @Override
     public void setData(String u) {
-        super.setMaxItem(14);
+        super.setMaxItem(17);
         super.setData(u);
     }
 

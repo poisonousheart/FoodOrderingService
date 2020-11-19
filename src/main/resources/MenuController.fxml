@@ -54,7 +54,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="200.0" layoutY="721.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="150.0" text="xxx Baht" textFill="WHITE">
+                  <Label fx:id="totalPrice" layoutX="200.0" layoutY="721.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="150.0" text="xxx Baht" textFill="WHITE">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
