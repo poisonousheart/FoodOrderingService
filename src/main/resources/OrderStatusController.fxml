@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.OrderStatusController">
    <children>
       <AnchorPane id="orderbasebackground" fx:id="orderStatusPage" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@style.css">
@@ -50,7 +49,7 @@
             </Label>
             <ImageView fitHeight="76.0" fitWidth="231.0" layoutX="1000.0" layoutY="945.0">
                <image>
-                  <Image url="@img/menubutton/backButton.png" />
+                  <Image url="@img/menubutton/backButton2.png" />
                </image>
             </ImageView>
             <Button fx:id="backButton" layoutX="980.0" layoutY="934.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" prefHeight="99.0" prefWidth="265.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-cursor: hand;" text="Back" textFill="WHITE">
@@ -68,7 +67,7 @@
                   <Image url="@img/menubutton/backButton.png" />
                </image>
             </ImageView>
-            <Button fx:id="checkbillButton" layoutX="700.0" layoutY="934.0" mnemonicParsing="false" onMouseClicked="#checkbillButtonClick" prefHeight="99.0" prefWidth="300.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-cursor: hand;" text="Check Bills" textFill="WHITE">
+            <Button fx:id="checkbillButton" layoutX="734.0" layoutY="934.0" mnemonicParsing="false" onMouseClicked="#checkbillButtonClick" prefHeight="99.0" prefWidth="241.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-cursor: hand;" text="Check Bills" textFill="WHITE">
                <font>
                   <Font size="40.0" />
                </font>

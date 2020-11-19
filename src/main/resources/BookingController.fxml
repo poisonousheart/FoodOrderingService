@@ -8,7 +8,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane id="bookingAnchorPane" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BookingController">
    <children>
       <AnchorPane id="bookingboard" layoutX="346.0" layoutY="194.0" prefHeight="692.0" prefWidth="1229.0">
@@ -43,7 +42,7 @@
                   <Font size="84.0" />
                </font>
             </Text>
-            <Button fx:id="increaseButton" layoutX="681.0" layoutY="316.0" mnemonicParsing="false" onMouseClicked="#increaseButtonClick" prefHeight="64.0" prefWidth="65.0" style="-fx-background: transparent; -fx-background-color: transparent;" textFill="#be1d2d">
+            <Button fx:id="increaseButton" layoutX="681.0" layoutY="316.0" mnemonicParsing="false" onMouseClicked="#increaseButtonClick" prefHeight="64.0" prefWidth="65.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-cursor: hand;" textFill="#be1d2d">
                <font>
                   <Font size="20.0" />
                </font>
@@ -58,7 +57,7 @@
                   <Font size="110.0" />
                </font>
             </Text>
-            <Button fx:id="decreaseButton" layoutX="466.0" layoutY="323.0" mnemonicParsing="false" onMouseClicked="#decreaseButtonClick" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: transparent;">
+            <Button fx:id="decreaseButton" layoutX="466.0" layoutY="323.0" mnemonicParsing="false" onMouseClicked="#decreaseButtonClick" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
                <font>
                   <Font size="20.0" />
                </font>

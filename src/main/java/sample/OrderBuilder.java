@@ -11,11 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 
-import java.util.ArrayList;
-
 public class OrderBuilder {
-
-    private static ArrayList<String> orderList = new ArrayList<>();
 
     public GridPane createOrder(GridPane menu){
 //        System.out.println(menu.getChildren().get(0));
@@ -24,7 +20,7 @@ public class OrderBuilder {
 
         //create gridpane
         GridPane gridPane = new GridPane();
-        gridPane.setPadding(new Insets(20,0,5,0));
+        gridPane.setPadding(new Insets(20,5,10,0));
         gridPane.setPrefHeight(200);
         gridPane.setPrefWidth(340);
         gridPane.setAlignment(Pos.CENTER);
@@ -78,12 +74,12 @@ public class OrderBuilder {
         //set menu name row 2
         Label menuName = new Label();
         menuName.setPrefHeight(150);
-        menuName.setPrefWidth(340);
+        menuName.setPrefWidth(330);
 
         String[] tmp = String.valueOf(menu.getChildren().get(1)).split("'");
         String name = tmp[tmp.length-1];
         menuName.setText(name);
-        menuName.setPadding(new Insets(10,0,0,0));
+        menuName.setPadding(new Insets(20,0,0,0));
         menuName.setAlignment(Pos.CENTER);
         menuName.setId("ordermenu");
         gridPane.addRow(1, menuName);
@@ -98,7 +94,7 @@ public class OrderBuilder {
         String price = tmp[tmp.length-1];
         menuPrice.setText(price);
 
-        menuPrice.setPadding(new Insets(0,10,0,10));
+        menuPrice.setPadding(new Insets(10,10,0,10));
         menuPrice.setAlignment(Pos.CENTER);
         menuPrice.setId("orderprice");
         gridPane.addRow(2, menuPrice);
@@ -108,11 +104,16 @@ public class OrderBuilder {
         Button plusBtn = new Button();
         Button delBtn = new Button();
         Label qnt = new Label();
-        
+
+        delBtn.setMaxSize(25, 25);
+        delBtn.setId("orderDelButton");
+        minBtn.setId("orderMinButton");
+        plusBtn.setId("orderPlusButton");
+        qnt.setId("qntLabel");
         minBtn.setText("-");
         qnt.setText("1");
         plusBtn.setText("+");
-        delBtn.setText("Del");
+        delBtn.setText("");
 
         //set action on minus button
         minBtn.setOnMouseClicked(event -> {
@@ -133,8 +134,7 @@ public class OrderBuilder {
 
         gridPane.addRow(3, minBtn, qnt, plusBtn, delBtn);
 
+
         return gridPane;
     }
-
-
 }

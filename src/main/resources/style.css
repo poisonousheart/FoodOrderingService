@@ -82,7 +82,7 @@
 -fx-background-radius: 6, 5;
 -fx-background-insets: 0, 1;
 -fx-text-fill: white;
- -fx-cursor: hand;
+-fx-cursor: hand;
 }
 /*  --------------------------------------> BookingPage <---------------------------------------------*/
 #bookingAnchorPane {
@@ -90,8 +90,7 @@
 -fx-background-size: 1920px 1080px;
 }
 #bookingboard {
- -fx-background-image: url("img/bookingBoardBackground.jpg");
--fx-background-color: white;
+-fx-background-image: url("img/bookingBoardBackground.jpg");
 -fx-border-color: #f13939;
 -fx-border-width: 5;
 }
@@ -164,14 +163,18 @@
 -fx-background-image: url("img/background.jpg");
 }
 #orderingList {
--fx-background-color : #f24040;
+-fx-background-color: #f24040;
 -fx-font-size: 20px;
 }
 #confirmbg {
--fx-background-color : #f24040;
+-fx-background-color: #f24040;
 }
 #orderButton {
+-fx-background-color: #a9eca2;
 -fx-cursor: hand;
+}
+#orderButton:pressed {
+-fx-background-color: #9fc59b;
 }
 #categoryName {
 -fx-border-color: black;
@@ -179,7 +182,64 @@
 -fx-background-color: #f13939;
 /*-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #ffd505, #ff942e);*/
 }
-
+#orderPane {
+-fx-background-color: #ff85a2;
+-fx-border-color: #f13939;
+-fx-border-width: 5;
+}
+#ordermenu {
+-fx-font-size: 20px;
+-fx-text-fill: white;
+-fx-font-weight: bold;
+}
+#orderprice {
+-fx-font-size: 20px;
+-fx-text-fill: white;
+-fx-font-weight: bold;
+}
+#qntLabel {
+-fx-font-size: 20px;
+-fx-text-fill: white;
+-fx-font-weight: bold;
+}
+#orderDelButton {
+-fx-background-image: url("img/menubutton/delButton.png");
+-fx-background-size: 25px 40px;
+-fx-font-size: 20px;
+}
+#orderMinButton {
+-fx-background-color:
+        linear-gradient(#ffd1dc, #ffd1dc),
+        radial-gradient(center 50% -40%, radius 200%, #f57070 45%, #f02828 50%);
+-fx-background-radius: 6, 5;
+-fx-background-insets: 0, 1;
+-fx-text-fill: white;
+-fx-font-size: 20px;
+}
+#orderMinButton:pressed {
+-fx-background-color:
+        linear-gradient(#ffd1dc, #ffd1dc),
+        radial-gradient(center 50% -40%, radius 200%, #d36262 45%, #d03636 50%);
+        -fx-background-radius: 6, 5;
+        -fx-background-insets: 0, 1;
+}
+#orderPlusButton {
+-fx-background-color:
+        linear-gradient(#ffd1dc, #ffd1dc),
+        radial-gradient(center 50% -40%, radius 200%, #9ecae6 45%, #958deb 50%);
+-fx-background-radius: 6, 5;
+-fx-background-insets: 0, 1;
+-fx-text-fill: white;
+-fx-font-size: 20px;
+}
+#orderPlusButton:pressed {
+-fx-background-color:
+        linear-gradient(#ffd1dc, #ffd1dc),
+        radial-gradient(center 50% -40%, radius 200%, #93b4c8 45%, #8781c4 50%);
+-fx-background-radius: 6, 5;
+-fx-background-insets: 0, 1;
+-fx-text-fill: white;
+}
 /*  --------------------------------------> OrderStatusPage <---------------------------------------------*/
 #orderbasebackground {
 -fx-background-image: url("img/backgroundOrder.jpg");
@@ -193,9 +253,4 @@
 -fx-background-size: 640px 360px;
 -fx-background-color: linear-gradient(from 0% 50% to 100% 50%, rgba(244,244,244,1), rgba(244,244,244,0));
 /*-fx-background-opacity: 0.5; */
-}
-#orderPane {
--fx-background-color: white;
--fx-border-color: #f13939;
--fx-border-width: 5;
 }
