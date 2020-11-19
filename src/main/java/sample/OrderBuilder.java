@@ -68,7 +68,7 @@ public class OrderBuilder {
         orderImg.setFitHeight(100);
         orderImg.setFitWidth(150);
         orderImg.setPreserveRatio(false);
-        orderImg.setPickOnBounds(true);
+        orderImg.setX(340/2);
         gridPane.addRow(0,orderImg);
 
         //set menu name row 2
@@ -79,9 +79,8 @@ public class OrderBuilder {
         String[] tmp = String.valueOf(menu.getChildren().get(1)).split("'");
         String name = tmp[tmp.length-1];
         menuName.setText(name);
-
-        menuName.setPadding(new Insets(0,0,0,150));
-        menuName.setAlignment(Pos.CENTER_LEFT);
+        menuName.setPadding(new Insets(10,0,0,0));
+        menuName.setAlignment(Pos.CENTER);
         menuName.setId("ordermenu");
         gridPane.addRow(1, menuName);
 
@@ -96,6 +95,7 @@ public class OrderBuilder {
         menuPrice.setText(price);
 
         menuPrice.setPadding(new Insets(0,10,0,10));
+        menuPrice.setAlignment(Pos.CENTER);
         menuPrice.setId("orderprice");
         gridPane.addRow(2, menuPrice);
 
@@ -104,7 +104,7 @@ public class OrderBuilder {
         Button plusBtn = new Button();
         Button delBtn = new Button();
         Label qnt = new Label();
-
+        
         minBtn.setText("-");
         qnt.setText("1");
         plusBtn.setText("+");
