@@ -1,5 +1,8 @@
 package sample;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class Order {
     private String name;
     private String createTime;
@@ -26,6 +29,6 @@ public class Order {
     }
 
     public String getPrice() {
-        return price;
+        return NumberFormat.getNumberInstance(Locale.US).format(price);
     }
 }

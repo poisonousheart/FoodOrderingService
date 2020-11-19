@@ -13,6 +13,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class OrderStatusController {
 
@@ -29,12 +31,6 @@ public class OrderStatusController {
 
     public void initialize(){
         orderSlicer = new OrderSlicer();
-        orderSlicer.setData("{\"id\":17,\"menu_id\":\"B2\",\"menu_status\":1,\"menu_name\":\"curry rice\",\"price\":120,\"recipe\":\"\",\"image\":\"iVBORw0KGgoAAAANSUhEUgAAAloAAAJxCAYAAACaMBwfAAAAAXNSR0IArs4c6QAAAAlwSFlzAAAXEgAAFxIBZ5\\,\"created_at\":\"2020-11-16T09:50:53.000000Z");
-        Order o1 = new Order(orderSlicer.getMenuName(),orderSlicer.getTimeCreated(),
-                            orderSlicer.getStatus(), orderSlicer.getPrice());
-        orderSlicer.setData("{\"id\":99,\"menu_id\":\"Z8\",\"menu_status\":1,\"menu_name\":\"tar's best dish\",\"price\":99999,\"recipe\":\"\",\"image\":\"iVBORw0KGgoAAAANSUhEUgAAAloAAAJxCAYAAACaMBwfAAAAAXNSR0IArs4c6QAAAAlwSFlzAAAXEgAAFxIBZ5\\,\"created_at\":\"2020-11-16T03:90:43.000000Z");
-        Order o2 = new Order(orderSlicer.getMenuName(),orderSlicer.getTimeCreated(),
-                orderSlicer.getStatus(), orderSlicer.getPrice());
         //        System.out.println(o1.getName());
 //        System.out.println(o1.getCreateTime());
 //        System.out.println(o1.getStatus());
@@ -60,6 +56,12 @@ public class OrderStatusController {
         //priceCol.setPrefWidth(375);
 
         //orderTable.getColumns().addAll(menuNameCol, orderTimeCol, statusCol, priceCol);
+        orderSlicer.setData("{\"id\":17,\"menu_id\":\"B2\",\"menu_status\":1,\"menu_name\":\"curry rice\",\"price\":120,\"recipe\":\"\",\"image\":\"iVBORw0KGgoAAAANSUhEUgAAAloAAAJxCAYAAACaMBwfAAAAAXNSR0IArs4c6QAAAAlwSFlzAAAXEgAAFxIBZ5\\,\"created_at\":\"2020-11-16T09:50:53.000000Z");
+        Order o1 = new Order(orderSlicer.getMenuName(),orderSlicer.getTimeCreated(),
+                orderSlicer.getStatus(), orderSlicer.getPrice());
+        orderSlicer.setData("{\"id\":99,\"menu_id\":\"Z8\",\"menu_status\":1,\"menu_name\":\"tar's best dish\",\"price\":99999,\"recipe\":\"\",\"image\":\"iVBORw0KGgoAAAANSUhEUgAAAloAAAJxCAYAAACaMBwfAAAAAXNSR0IArs4c6QAAAAlwSFlzAAAXEgAAFxIBZ5\\,\"created_at\":\"2020-11-16T03:90:43.000000Z");
+        Order o2 = new Order(orderSlicer.getMenuName(),orderSlicer.getTimeCreated(),
+                orderSlicer.getStatus(), orderSlicer.getPrice());
         orderTable.getItems().add(o1);
         orderTable.getItems().add(o2);
 
@@ -68,7 +70,7 @@ public class OrderStatusController {
             Order order = (Order) o;
             sum += Integer.valueOf(order.getPrice());
         }
-        totalPrice.setText(sum+" Baht");
+        totalPrice.setText(NumberFormat.getNumberInstance(Locale.US).format(sum)+" Baht");
     }
 
     @FXML public void backButtonClick(MouseEvent event) throws IOException {

@@ -20,8 +20,9 @@
       <TableView fx:id="orderTable" layoutX="201.0" layoutY="225.0" prefHeight="679.0" prefWidth="1553.0" stylesheets="style.css">
         <columns>
           <TableColumn id="orderColumn" fx:id="menuNameCol" prefWidth="377.0" text="Menu Name" />
-            <TableColumn id="orderColumn" fx:id="orderTimeCol" prefWidth="397.0" text="Ordered at" />
-            <TableColumn id="orderColumn" fx:id="statusCol" prefWidth="358.0" text="Status" />
+            <TableColumn id="orderColumn" fx:id="qntCol" prefWidth="262.0" text="Quantity" />
+            <TableColumn id="orderColumn" fx:id="orderTimeCol" prefWidth="399.0" text="Ordered at" />
+            <TableColumn id="orderColumn" fx:id="statusCol" prefWidth="169.0" text="Status" />
             <TableColumn id="orderColumn" fx:id="priceCol" minWidth="0.0" prefWidth="420.0" text="Price" />
         </columns>
       </TableView>

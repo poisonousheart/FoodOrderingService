@@ -20,10 +20,10 @@
       <TableView fx:id="orderTable" layoutX="201.0" layoutY="225.0" prefHeight="679.0" prefWidth="1553.0" stylesheets="style.css">
         <columns>
           <TableColumn id="orderColumn" fx:id="menuNameCol" prefWidth="377.0" text="Menu Name" />
-          <TableColumn id="orderColumn" fx:id="qntCol" minWidth="0.0" prefWidth="243.0" text="Quantity" />
-            <TableColumn id="orderColumn" fx:id="orderTimeCol" prefWidth="326.0" text="Ordered at" />
-            <TableColumn id="orderColumn" fx:id="statusCol" prefWidth="301.0" text="Status" />
-            <TableColumn id="orderColumn" fx:id="priceCol" minWidth="0.0" prefWidth="305.0" text="Total Price" />
+            <TableColumn id="orderColumn" fx:id="qntCol" prefWidth="262.0" text="Quantity" />
+            <TableColumn id="orderColumn" fx:id="orderTimeCol" prefWidth="399.0" text="Ordered at" />
+            <TableColumn id="orderColumn" fx:id="statusCol" prefWidth="169.0" text="Status" />
+            <TableColumn id="orderColumn" fx:id="priceCol" minWidth="0.0" prefWidth="420.0" text="Price" />
         </columns>
       </TableView>
       <Text fill="WHITE" layoutX="1651.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table No. " wrappingWidth="206.6708984375">
@@ -31,7 +31,7 @@
             <Font size="40.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="1282.0" layoutY="988.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Price : " wrappingWidth="368.6708984375">
+      <Text fill="WHITE" layoutX="1244.0" layoutY="988.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Price : " wrappingWidth="368.6708984375">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>
@@ -57,5 +57,10 @@
          </font>
       </Text>
       <Button fx:id="backButton" layoutX="828.0" layoutY="933.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" prefHeight="99.0" prefWidth="265.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-cursor: hand;" />
+      <Label fx:id="totalPrice" layoutX="1484.0" layoutY="945.0" prefHeight="58.0" prefWidth="380.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
