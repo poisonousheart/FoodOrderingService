@@ -20,9 +20,8 @@
       <TableView fx:id="orderTable" layoutX="201.0" layoutY="225.0" prefHeight="679.0" prefWidth="1553.0" stylesheets="style.css">
         <columns>
           <TableColumn id="orderColumn" fx:id="menuNameCol" prefWidth="377.0" text="Menu Name" />
-            <TableColumn id="orderColumn" fx:id="qntCol" prefWidth="262.0" text="Quantity" />
-            <TableColumn id="orderColumn" fx:id="orderTimeCol" prefWidth="399.0" text="Ordered at" />
-            <TableColumn id="orderColumn" fx:id="statusCol" prefWidth="169.0" text="Status" />
+            <TableColumn id="orderColumn" fx:id="orderTimeCol" prefWidth="397.0" text="Ordered at" />
+            <TableColumn id="orderColumn" fx:id="statusCol" prefWidth="358.0" text="Status" />
             <TableColumn id="orderColumn" fx:id="priceCol" minWidth="0.0" prefWidth="420.0" text="Price" />
         </columns>
       </TableView>
@@ -60,6 +59,11 @@
       <Label fx:id="totalPrice" layoutX="1484.0" layoutY="945.0" prefHeight="58.0" prefWidth="380.0" text="Label" textFill="WHITE">
          <font>
             <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="tableNo" layoutX="1826.0" layoutY="1.0" prefHeight="123.0" prefWidth="82.0" style="-fx-background-color: transparent;" text="1" textFill="WHITE">
+         <font>
+            <Font size="40.0" />
          </font>
       </Label>
     </children>

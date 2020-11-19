@@ -86,7 +86,7 @@ public class MenuController {
                 //------------------------URL--------------------
                 //{"menu_name":"salmon","table_number":"1"}
 
-                ApiController.postMethod("http://6a337ee79127.ngrok.io/api/orders/",
+                ApiController.postMethod("http://4d8e9aa5673b.ngrok.io/api/orders/",
                         "{\"menu_name\":"+orderName+",\"table_number\":\""+tableNoString+"\"}");
 //                System.out.println("{\"menu_name\":"+orderName+",\"table_number\":\""+tableNoString+"\"}");
 //                System.out.println("{\"menu_name\":\"Unadon\",\"table_number\":\"1\"}\n");
@@ -156,7 +156,7 @@ public class MenuController {
 
     @FXML private void setCateClickEvent(String cate) throws IOException {
         menuDisplayPane.getChildren().clear();
-        String json = ApiController.getMethod("http://6a337ee79127.ngrok.io/api/menus/getAll");
+        String json = ApiController.getMethod("http://4d8e9aa5673b.ngrok.io/api/menus/getAll");
         String[] jsonFormat = json.split("[{}:,\\[\\]\"]");
         ArrayList<String> idList = new ArrayList<>();
         ArrayList<String> cateList = new ArrayList<>();
@@ -183,7 +183,7 @@ public class MenuController {
 
 
         //---------------URL------------------------
-        String dbUrl = "http://6a337ee79127.ngrok.io/api/menus/search/";
+        String dbUrl = "http://4d8e9aa5673b.ngrok.io/api/menus/search/";
         int xLayout = 20, yLayout = 0, maxPerLine = 3;
         GridPane menu;
         for (int i = 0; i < menuCount; i++) {
