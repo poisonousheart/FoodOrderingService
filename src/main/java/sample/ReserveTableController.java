@@ -26,11 +26,11 @@ public class ReserveTableController {
     @FXML public void selectNo(MouseEvent event) throws IOException {
         Button btn = (Button) event.getSource();
         //System.out.println(btn.getText());
-        String selected = ApiController.getMethod("http://4d8e9aa5673b.ngrok.io/api/tables/getStatus/"+btn.getText());
+        String selected = ApiController.getMethod("http://42de8d7e28e8.ngrok.io/api/tables/getStatus/"+btn.getText());
         if (selected.equals("0")) {
             statusField.setVisible(false);
             tableNo = btn.getText();
-            ApiController.getMethod("http://4d8e9aa5673b.ngrok.io/api/tables/initTable/"+btn.getText());
+            ApiController.getMethod("http://42de8d7e28e8.ngrok.io/api/tables/initTable/"+btn.getText());
 //            System.out.println(tableNo);
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("BookingController.fxml"));
             Stage stage = (Stage) btn.getScene().getWindow();

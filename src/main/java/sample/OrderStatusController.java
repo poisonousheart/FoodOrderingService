@@ -76,23 +76,23 @@ public class OrderStatusController {
 //        orderTable.getItems().add(o1);
 //        orderTable.getItems().add(o2);
                 //---------------------------------------URL--------------------------
-                String jsonFormat = ApiController.getMethod("http://4d8e9aa5673b.ngrok.io/api/orders/getByTable/"+tableNo.getText());
+                String jsonFormat = ApiController.getMethod("http://42de8d7e28e8.ngrok.io/api/orders/getByTable/"+tableNo.getText());
                 String[] jsonString = jsonFormat.split("[{]");
-//        for (String s:jsonString)
-//            System.out.println("order status check "+s);
-                for (int i = 1; i < jsonString.length; i++) {
+        for (String s:jsonString)
+            System.out.println("order status check "+s);
+
+                for (int i = 2; i < jsonString.length; i++) {
                     String[] orderString = jsonString[i].split("[:,\"]");
-//           for(String s: orderString)
-//               System.out.println("item check "+s);
+           for(String s: orderString)
+               System.out.println("orderString check "+s);
                     ArrayList<String> order = new ArrayList<>();
                     for (int j = 0; j < orderString.length; j++) {
                         if(orderString[j] != null && !orderString[j].trim().isEmpty()) {
                             order.add(orderString[j]);
                         }
                     }
-//            for (String s: order)
-//                System.out.println("order check "+s);
-
+            for (String s: order)
+                System.out.println("order check "+s);
 
 //                    System.out.println(order);
 
@@ -102,14 +102,16 @@ public class OrderStatusController {
                     String status = order.get(order.indexOf("status")+1);
 
                     int index = order.indexOf("updated_at");
+                    System.out.println("fucking bug "+order.get(index));
                     String[] tmp = order.get(index+1).split("T");
                     String[] tmp2 = order.get(index+3).split("\\.");
 
-//                    System.out.println("tmp = "+tmp);
-//                    System.out.println("tmp2 = "+tmp2);
+
+                    System.out.println("tmp = "+tmp);
+                    System.out.println("tmp2 = "+tmp2);
 
                     String time = tmp[1] +":"+order.get(index+2)+":"+ tmp2[0];
-                    String dbUrl = "http://4d8e9aa5673b.ngrok.io/api/menus/searchNoImage/";
+                    String dbUrl = "http://42de8d7e28e8.ngrok.io/api/menus/searchNoImage/";
 //            GridPane menu = menuBuilder.getMenu(dbUrl+menuId);
                     //name and price
 //            String menuName = String.valueOf(menu.getChildren().get(1)).split("'")[1];
@@ -149,9 +151,9 @@ public class OrderStatusController {
     }
 
     @FXML public void yesButtonClick(MouseEvent event) throws IOException {
-        ApiController.deleteMethod("http://4d8e9aa5673b.ngrok.io/api/orders/"+tableNo.getText());
-//        ApiController.getMethod("http://4d8e9aa5673b.ngrok.io/api/tables/checkout/"+tableNo.getText());
-        //        System.out.println("http://4d8e9aa5673b.ngrok.io/api/orders/"+tableNo.getText());
+        ApiController.deleteMethod("http://42de8d7e28e8.ngrok.io/api/orders/"+tableNo.getText());
+        ApiController.getMethod("http://42de8d7e28e8.ngrok.io/api/tables/checkout/"+tableNo.getText());
+        //        System.out.println("http://42de8d7e28e8.ngrok.io/api/orders/"+tableNo.getText());
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("BookingController.fxml"));
         Stage stage = (Stage) backButton.getScene().getWindow();
         stage.getScene().setRoot(root);
