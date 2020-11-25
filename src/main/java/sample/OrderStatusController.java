@@ -31,7 +31,7 @@ public class OrderStatusController {
     @FXML
     TableView orderTable;
     @FXML
-    AnchorPane confirmPage, orderStatusPage;
+    AnchorPane confirmPage, confirmAnywayPage, orderStatusPage;
 
     @FXML
     Label totalPrice, tableNo;
@@ -39,6 +39,7 @@ public class OrderStatusController {
     public void initialize() throws IOException {
                 tableNo.setText(ReserveTableController.tableNo);
                 confirmPage.setVisible(false);
+                confirmAnywayPage.setVisible(false);
                 orderStatusPage.setVisible(true);
                 orderSlicer = new OrderSlicer();
                 menuBuilder = new MenuBuilder();
@@ -76,7 +77,7 @@ public class OrderStatusController {
 //        orderTable.getItems().add(o1);
 //        orderTable.getItems().add(o2);
                 //---------------------------------------URL--------------------------
-                String jsonFormat = ApiController.getMethod("http://42de8d7e28e8.ngrok.io/api/orders/getByTable/"+tableNo.getText());
+                String jsonFormat = ApiController.getMethod(Main.url+"/api/orders/getByTable/"+tableNo.getText());
                 String[] jsonString = jsonFormat.split("[{]");
         for (String s:jsonString)
             System.out.println("order status check "+s);
@@ -111,7 +112,7 @@ public class OrderStatusController {
                     System.out.println("tmp2 = "+tmp2);
 
                     String time = tmp[1] +":"+order.get(index+2)+":"+ tmp2[0];
-                    String dbUrl = "http://42de8d7e28e8.ngrok.io/api/menus/searchNoImage/";
+                    String dbUrl = Main.url+"api/menus/searchNoImage/";
 //            GridPane menu = menuBuilder.getMenu(dbUrl+menuId);
                     //name and price
 //            String menuName = String.valueOf(menu.getChildren().get(1)).split("'")[1];
@@ -140,19 +141,29 @@ public class OrderStatusController {
         stage.getScene().setRoot(root);
     }
 
-    @FXML public void checkbillButtonClick(MouseEvent event){
-        confirmPage.setVisible(true);
-        orderStatusPage.setDisable(true);
+    @FXML public void checkbillButtonClick(MouseEvent event) {
+//        if (){ ------------------ < -ใส่เพื่อเช็คว่ามีรายการอาหารทำเสร็จหมดแล้วหรือยัง ถ้ายัง
+//
+//            confirmPage.setVisible(false);
+//            confirmAnywayPage.setVisible(true);
+//            orderStatusPage.setDisable(true);
+//        }
+//        else { ------------------ < - รายการอาหารทำเสร็จหมดแล้ว
+//        confirmPage.setVisible(true);
+//        confirmAnywayPage.setVisible(false);
+//        orderStatusPage.setDisable(true);
+//        }
     }
 
     @FXML public void noButtonClick(MouseEvent event) throws IOException {
         confirmPage.setVisible(false);
+        confirmAnywayPage.setVisible(false);
         orderStatusPage.setDisable(false);
     }
 
     @FXML public void yesButtonClick(MouseEvent event) throws IOException {
-        ApiController.deleteMethod("http://42de8d7e28e8.ngrok.io/api/orders/"+tableNo.getText());
-        ApiController.getMethod("http://42de8d7e28e8.ngrok.io/api/tables/checkout/"+tableNo.getText());
+        ApiController.deleteMethod(Main.url+"/api/orders/"+tableNo.getText());
+        ApiController.getMethod(Main.url+"/api/tables/checkout/"+tableNo.getText());
         //        System.out.println("http://42de8d7e28e8.ngrok.io/api/orders/"+tableNo.getText());
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("BookingController.fxml"));
         Stage stage = (Stage) backButton.getScene().getWindow();

@@ -87,7 +87,7 @@ public class MenuController {
                 //------------------------URL--------------------
                 //{"menu_name":"salmon","table_number":"1"}
 
-                ApiController.postMethod("http://42de8d7e28e8.ngrok.io/api/orders/",
+                ApiController.postMethod(Main.url+"/api/orders/",
                         "{\"menu_name\":"+orderName+",\"table_number\":\""+tableNoString+"\"}");
 //                System.out.println("{\"menu_name\":"+orderName+",\"table_number\":\""+tableNoString+"\"}");
 //                System.out.println("{\"menu_name\":\"Unadon\",\"table_number\":\"1\"}\n");
@@ -184,7 +184,7 @@ public class MenuController {
 
 
         //---------------URL------------------------
-        String dbUrl = "http://42de8d7e28e8.ngrok.io/api/menus/search/";
+        String dbUrl = Main.url+"/api/menus/search/";
         int xLayout = 20, yLayout = 0, maxPerLine = 3;
         GridPane menu;
         for (int i = 0; i < menuCount; i++) {

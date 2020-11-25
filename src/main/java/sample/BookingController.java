@@ -30,7 +30,7 @@ public class BookingController {
     }
 
     @FXML public void bookingButtonClick(MouseEvent event) throws IOException {
-        ApiController.putMethod("http://42de8d7e28e8.ngrok.io/api/tables/checkin/"+ReserveTableController.tableNo,"{\"numCus\":\""+amountLabel.getText()+"\"}");
+        ApiController.putMethod(Main.url+"/api/tables/checkin/"+ReserveTableController.tableNo,"{\"numCus\":\""+amountLabel.getText()+"\"}");
 //        System.out.println("{\"numCus\":\""+amountLabel.getText()+"\"}");
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MenuController.fxml"));
         Stage stage = (Stage) bookButton.getScene().getWindow();
