@@ -58,6 +58,7 @@ public class MenuBuilder {
 
         //add content for gridpane
         //set menu image
+        menuSlicer.setData(menu);
         Image image = menuSlicer.getImage();
         ImageView menuImg = new ImageView();
         menuImg.setFitHeight(225);

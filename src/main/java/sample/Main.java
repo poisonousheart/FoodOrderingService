@@ -10,7 +10,7 @@ import java.io.*;
 
 public class Main extends Application {
 
-    public static String url = "http://667c65ed8ac0.ngrok.io/";
+    public static String url = "http://0d989fd4052b.ngrok.io";
 
     @Override
     public void start(Stage primaryStage) throws Exception{

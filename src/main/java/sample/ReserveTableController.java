@@ -32,7 +32,7 @@ public class ReserveTableController {
             tableNo = btn.getText();
             ApiController.getMethod(Main.url+"/api/tables/initTable/"+btn.getText());
 //            System.out.println(tableNo);
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("BookingController.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MenuController.fxml"));
             Stage stage = (Stage) btn.getScene().getWindow();
             stage.getScene().setRoot(root);
         }

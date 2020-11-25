@@ -24,6 +24,7 @@ public class OrderStatusController {
 
     private OrderSlicer orderSlicer;
     private MenuBuilder menuBuilder;
+    boolean allServed = true;
     @FXML
     Button backButton;
     @FXML
@@ -112,7 +113,7 @@ public class OrderStatusController {
                     System.out.println("tmp2 = "+tmp2);
 
                     String time = tmp[1] +":"+order.get(index+2)+":"+ tmp2[0];
-                    String dbUrl = Main.url+"api/menus/searchNoImage/";
+                    String dbUrl = Main.url+"/api/menus/searchNoImage/";
 //            GridPane menu = menuBuilder.getMenu(dbUrl+menuId);
                     //name and price
 //            String menuName = String.valueOf(menu.getChildren().get(1)).split("'")[1];
@@ -122,6 +123,8 @@ public class OrderStatusController {
                     String menuName = menuItem[6];
                     String menuPrice = menuItem[11];
 
+                    if(status.equals("cooking"))
+                        allServed = false;
                     Order o = new Order(menuName, time, status, menuPrice);
                     orderTable.getItems().add(o);
                 }
@@ -142,13 +145,14 @@ public class OrderStatusController {
     }
 
     @FXML public void checkbillButtonClick(MouseEvent event) {
-        boolean allServed = true;
+//        boolean allServed = true;
         for(Object o:statusCol.getColumns()){
-            String status=  o.toString();
-            if(status.equals("Cooking")) {
-                allServed = false;
-                break;
-            }
+            String status =  o.toString();
+            System.out.println("Fucking Status "+status);
+//            if(status.equals("cooking")) {
+//                allServed = false;
+//                break;
+//            }
         }
         if (!allServed){ //ใส่เพื่อเช็คว่ามีรายการอาหารทำเสร็จหมดแล้วหรือยัง ถ้ายัง
 
@@ -173,7 +177,7 @@ public class OrderStatusController {
         ApiController.deleteMethod(Main.url+"/api/orders/"+tableNo.getText());
         ApiController.getMethod(Main.url+"/api/tables/checkout/"+tableNo.getText());
         //        System.out.println("http://42de8d7e28e8.ngrok.io/api/orders/"+tableNo.getText());
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("BookingController.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MenuController.fxml"));
         Stage stage = (Stage) backButton.getScene().getWindow();
         stage.getScene().setRoot(root);
     }

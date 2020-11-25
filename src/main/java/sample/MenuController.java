@@ -157,7 +157,7 @@ public class MenuController {
 
     @FXML private void setCateClickEvent(String cate) throws IOException {
         menuDisplayPane.getChildren().clear();
-        String json = ApiController.getMethod("http://42de8d7e28e8.ngrok.io/api/menus/getAll");
+        String json = ApiController.getMethod(Main.url+"/api/menus/getAll");
         String[] jsonFormat = json.split("[{}:,\\[\\]\"]");
         ArrayList<String> idList = new ArrayList<>();
         ArrayList<String> cateList = new ArrayList<>();
