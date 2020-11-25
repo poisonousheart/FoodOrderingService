@@ -14,19 +14,19 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-//        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("ReserveTableController.fxml"));
-//        primaryStage.setTitle("Satoya");
-//        primaryStage.setScene(new Scene(root, 1920, 1080));
-//        primaryStage.setAlwaysOnTop(true);
-//        primaryStage.setFullScreen(true);
-//        primaryStage.show();
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("ReserveTableController.fxml"));
+        primaryStage.setTitle("Satoya");
+        primaryStage.setScene(new Scene(root, 1920, 1080));
+        primaryStage.setAlwaysOnTop(true);
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
     }
 
 
     public static void main(String[] args) throws IOException {
-        MenuCategory menuCategory = new MenuCategory();
-        menuCategory.setData(url);
-        menuCategory.printAllMenu();
+//        MenuCategory menuCategory = new MenuCategory();
+//        menuCategory.setData(url);
+//        menuCategory.printAllMenu();
 //        //DataSlicer Testing
 //        OrderSlicer d = new OrderSlicer();
 //        System.out.println("----Order---");

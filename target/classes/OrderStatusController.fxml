@@ -81,7 +81,7 @@
       </AnchorPane>
       <AnchorPane id="confirmAnchorPane" fx:id="confirmPage" layoutX="640.0" layoutY="350.0" prefHeight="360.0" prefWidth="640.0" stylesheets="@style.css">
          <children>
-            <Label alignment="CENTER" prefHeight="200.0" prefWidth="650.0" text="Confirm?" textFill="WHITE">
+            <Label alignment="CENTER" layoutY="100.0" prefHeight="90.0" prefWidth="650.0" text="ยืนยันรายการหรือไม่?">
                <font>
                   <Font name="System Bold" size="46.0" />
                </font>
@@ -91,7 +91,7 @@
                   <Image url="@img/menubutton/backButton2.png" />
                </image>
             </ImageView>
-            <Button fx:id="noButton" layoutX="381.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#noButtonClick" prefHeight="69.0" prefWidth="199.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-cursor: hand;" text="No" textFill="WHITE">
+            <Button fx:id="noButton" layoutX="381.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#noButtonClick" prefHeight="69.0" prefWidth="199.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-cursor: hand;" text="ไม่" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -101,9 +101,43 @@
                   <Image url="@img/menubutton/confirmButton.png" />
                </image>
             </ImageView>
-            <Button fx:id="yesButton" layoutX="81.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#yesButtonClick" prefHeight="69.0" prefWidth="200.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-cursor: hand;" text="Yes" textFill="WHITE">
+            <Button fx:id="yesButton" layoutX="81.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#yesButtonClick" prefHeight="69.0" prefWidth="200.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-cursor: hand;" text="ยืนยัน" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="confirmAnchorPane" fx:id="confirmAnywayPage" layoutX="640.0" layoutY="350.0" prefHeight="360.0" prefWidth="640.0" stylesheets="@style.css">
+         <children>
+            <Label alignment="CENTER" layoutY="70.0" prefHeight="80.0" prefWidth="650.0" text="มีรายการอาหารที่ยังไม่ได้เสิร์ฟ">
+               <font>
+                  <Font name="System Bold" size="46.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="120.0" prefHeight="86.0" prefWidth="650.0" text="ต้องการยืนยันรายการเลยหรือไม่">
+               <font>
+                  <Font name="System Bold" size="46.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="62.0" fitWidth="199.0" layoutX="381.0" layoutY="249.0">
+               <image>
+                  <Image url="@img/menubutton/backButton2.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="noButton1" layoutX="381.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#noButtonClick" prefHeight="69.0" prefWidth="199.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-cursor: hand;" text="ไม่" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="62.0" fitWidth="199.0" layoutX="81.0" layoutY="249.0">
+               <image>
+                  <Image url="@img/menubutton/confirmButton.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="yesButton1" layoutX="81.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#yesButtonClick" prefHeight="69.0" prefWidth="200.0" style="-fx-background: transparent; -fx-background-color: transparent; -fx-cursor: hand;" text="ยืนยัน" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Button>
          </children>

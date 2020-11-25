@@ -142,17 +142,25 @@ public class OrderStatusController {
     }
 
     @FXML public void checkbillButtonClick(MouseEvent event) {
-//        if (){ ------------------ < -ใส่เพื่อเช็คว่ามีรายการอาหารทำเสร็จหมดแล้วหรือยัง ถ้ายัง
-//
-//            confirmPage.setVisible(false);
-//            confirmAnywayPage.setVisible(true);
-//            orderStatusPage.setDisable(true);
-//        }
-//        else { ------------------ < - รายการอาหารทำเสร็จหมดแล้ว
-//        confirmPage.setVisible(true);
-//        confirmAnywayPage.setVisible(false);
-//        orderStatusPage.setDisable(true);
-//        }
+        boolean allServed = true;
+        for(Object o:statusCol.getColumns()){
+            String status=  o.toString();
+            if(status.equals("Cooking")) {
+                allServed = false;
+                break;
+            }
+        }
+        if (!allServed){ //ใส่เพื่อเช็คว่ามีรายการอาหารทำเสร็จหมดแล้วหรือยัง ถ้ายัง
+
+            confirmPage.setVisible(false);
+            confirmAnywayPage.setVisible(true);
+            orderStatusPage.setDisable(true);
+        }
+        else { //รายการอาหารทำเสร็จหมดแล้ว
+        confirmPage.setVisible(true);
+        confirmAnywayPage.setVisible(false);
+        orderStatusPage.setDisable(true);
+        }
     }
 
     @FXML public void noButtonClick(MouseEvent event) throws IOException {

@@ -87,7 +87,7 @@ public class MenuBuilder {
         return gridPane;
     }
 
-    public GridPane getMenuFromClass(ArrayList<MenuList> category) throws IOException {
+    public GridPane getMenuFromClass() throws IOException {
         //create gridpane
         GridPane gridPane = new GridPane();
         gridPane.setLayoutX(40);
